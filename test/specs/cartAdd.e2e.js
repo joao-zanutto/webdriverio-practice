@@ -2,8 +2,16 @@ import HeaderPage from '../pageobjects/header.page'
 import CartPage from '../pageobjects/cart.page'
 import SearchResultPage from '../pageobjects/searchResult.page';
 import ProductPage from '../pageobjects/product.page'
+import CookieFooterPage from '../pageobjects/cookieFooter.page'
 
 describe('Funcionalidade de adicionar ao carrinho', () => {
+	// Adicionado before para fechar a janela de aceitação de cookies no inicio do test suite
+	//  para prevenir que interfira nos testes
+	before( () => {
+        browser.url(`/`);
+        CookieFooterPage.closeCookieSnackbar();
+    });
+
     it('deve ter o carrinho inicialmente vazio', () => {
         browser.url(`/`);
 

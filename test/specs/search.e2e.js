@@ -1,7 +1,15 @@
 import HeaderPage from  '../pageobjects/header.page';
 import SearchResultPage from '../pageobjects/searchResult.page'
+import CookieFooterPage from '../pageobjects/cookieFooter.page'
 
 describe('Funcionalidade de Busca', () => {
+    // Adicionado before para fechar a janela de aceitação de cookies no inicio do test suite
+	//  para prevenir que interfira nos testes
+    before( () => {
+        browser.url(`/`);
+        CookieFooterPage.closeCookieSnackbar();
+    });
+
     it('deve realizer a busca por um produto', () => {
         browser.url(`/`);
 
