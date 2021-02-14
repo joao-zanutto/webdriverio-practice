@@ -35,7 +35,7 @@ Feature: Adicionar ao carrinho
 
   Scenario: Resultado de Busca Semântico
     Dado que ainda não realizei nenhuma ação no site
-    Quando eu navego para a página de carrinhi
+    Quando eu navego para a página de carrinho
     Então eu devo ver um aviso de que meu carrinho está vazio
     
   Scenario: Fluxo sem garantia extendida
